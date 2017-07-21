@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+    <head>
+         <meta name="viewport" content="width-device=width; initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+        <title>Product Page</title>
+        <style>
+            .image
+            {
+                height: 150px;
+                width: 150px;
+                margin-left: 20%;
+            }
+            
+            .margin
+            {
+                margin-top: 3%;
+            }
+            
+            .font
+            {
+                font-size: 20px;
+                background-color: white;
+                height: 250px;
+            }
+            
+            .box
+            {
+                width: 40px;
+            }
+            
+            input[type=number]::-webkit-inner-spin-button
+            {
+                opacity: 1
+            }
+            
+            .div1
+            {
+                background-color: lightgrey;
+                width: 60%;
+                margin-top: 5%;
+                height: 80%;
+            }
+            
+            .btn
+            {
+                margin-top: 5%;
+                margin-bottom: 5%;
+            }
+            .btnproceed
+            {
+                margin-left: 2%;
+            }
+            .modal
+            {
+                display: none;
+                z-index: 1;
+                position: fixed;
+               
+            }
+            #id
+            {
+                height: 100%;
+                width: 100%;
+            }
+            .mainmargin
+            {
+                margin-top:10%;
+                margin-left: 50%;
+            }
+            .colmarg
+            {
+                margin-left: 90%;
+            }
+        </style>
+    </head>
+    <body>-
+        <div class="container">
+            <div class="row mainmargin">
+                <div class="row">
+                    <button type="button" class="btn btn-primary" onclick="openmodal()">PIZZA</button> 
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-primary">BURGER</button>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-primary">SANDWITCH</button>
+                </div>
+                <div class="row">
+                <button type="button" class="btn btn-primary">ICE-CREAM</button>
+                </div>
+            </div>
+        </div>
+        
+        
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        <div class="container margin div1 modal" id="mymodal">
+          <div class="row">
+              <div class="col-md-2 col-md-offset-10 colmarg">
+                  <button type="button" class="btn btn-danger" onclick="closemodal()">Back</button>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 margin">
+                    <img src="product.jpg" class="image"> 
+                </div>
+                <div class="col-md-5 margin font">
+                    <span id="pizzaid"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-9 margin">
+                    <input type="number" min="0" class="box" value="1" step="1">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7 btn col-md-offset-5">
+                    <button type="button" class="btn btn-primary" onclick="closemodal()">Add to cart</button>
+                    <button type="button" class="btn btn-success btnproceed" onclick="closemodal()">Proceed to pay</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            var modal=document.querySelector("#mymodal");
+            var body=document.getElementsByTagName("BODY")[0];
+            
+            function openmodal()
+            {
+                
+                modal.style.display="block";
+                body.style.backgroundColor= "black";
+                pizza();
+            }
+            function pizza()
+            {
+                var pizzaspec=document.querySelector("#pizzaid")
+                pizzaspec.innerHTML="<p>Type : Capcicum <br> Price : 250$ <br> GST : 25$ <br> Delivery Charges : 25$ <br> Total : 300$<p>"
+            }
+            function closemodal()
+            {
+                modal.style.display="none";
+                body.style.backgroundColor="white";
+            }
+        </script>
+    </body>
+</html>
